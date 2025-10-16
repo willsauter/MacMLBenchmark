@@ -48,6 +48,7 @@ struct MetalCapabilities {
             if deviceName.contains("Pro") { return 19 }
             return 10
         } else if deviceName.contains("M3") {
+            if deviceName.contains("Ultra") { return 60 }
             if deviceName.contains("Max") { return 40 }
             if deviceName.contains("Pro") { return 18 }
             return 10

@@ -548,7 +548,7 @@ Use this checklist to validate implementation against specification acceptance s
 ### P1 Scenarios (MVP)
 - [ ] Single benchmark runs with defaults (10 seconds)
 - [ ] Results display throughput, latency, GPU utilization
-- [ ] Hardware info correctly identifies M1/M2/M3 variant
+- [ ] Hardware info correctly identifies M1/M2/M3/M4 variant
 - [ ] Progress indicator shows during execution
 - [ ] Results include timestamp and configuration
 

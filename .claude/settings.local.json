@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.specify/scripts/bash/create-new-feature.sh:*)",
+      "Bash(.specify/scripts/bash/setup-plan.sh:*)",
+      "Bash(.specify/scripts/bash/update-agent-context.sh:*)",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(swift build:*)",
+      "Bash(.build/release/macmlbench:*)",
+      "Bash(swift test:*)",
+      "Bash(cat:*)",
+      "Bash(ssh:*)",
+      "Bash(scp:*)",
+      "Bash(git log:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: implement Mac ML Benchmark Suite (Feature 001)\n\nComplete GPU benchmarking tool for Mac Silicon with 5 ML/AI workload types:\n- Matrix multiplication (transformer simulation)\n- 2D convolution (CNN simulation)  \n- Attention mechanism (LLM representative)\n- Activation functions (memory bandwidth)\n- Mixed operations (training simulation)\n\nFeatures:\n- Hardware detection (M1/M2/M3/M4 support with GPU core detection)\n- Configurable parameters (duration, size, batch, threads)\n- Real-time progress indication during execution\n- Performance metrics (throughput, latency, GPU utilization, memory)\n- Result export (JSON/CSV formats)\n- Result comparison across multiple runs\n- Thermal throttling detection\n- SIGINT graceful cancellation\n\nCommands:\n- run: Execute benchmarks with custom parameters\n- list: Show available tasks\n- compare: Compare benchmark results\n- hardware: Display hardware profile\n- version: Show version info\n\nDocumentation:\n- Complete specification with 3 user stories (P1/P2/P3)\n- Implementation plan with constitution compliance\n- 83 tasks completed across 6 phases\n- Manual test plan with validation scenarios\n- Quickstart guide with examples\n\nTesting:\n- Manual validation against acceptance scenarios (all pass)\n- Unit tests for validators, metrics, exporters\n- Validated on M4 Pro (20 GPU cores, 48GB RAM)\n- All 14 functional requirements implemented\n- All 10 success criteria met\n\nConstitution compliance:\n- Complete Feature Delivery: All user stories fully functional ✓\n- Incremental Implementation: P1→P2→P3 delivered sequentially ✓\n- Testing Discipline: Manual validation + unit tests ✓\n- Code Quality: Simple, maintainable Swift with YAGNI ✓\n- Documentation Standards: All required docs complete ✓\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git checkout:*)",
+      "Bash(git merge:*)",
+      "Read(//Users/willsauter/.ssh/**)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
