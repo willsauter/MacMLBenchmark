@@ -23,6 +23,20 @@ results/*.csv
 # Configuration (SSH profiles may contain sensitive info)
 config/machines.json
 
+# ML Models (large binary files)
+models/*.bin
+models/*.onnx
+models/*.pt
+models/*.mlmodel
+models/*.h5
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
 # Environment
 .env
 .env.*
