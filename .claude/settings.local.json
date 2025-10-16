@@ -19,7 +19,10 @@
       "Read(//Users/willsauter/.ssh/**)",
       "Bash(git add:*)",
       "Bash(chmod:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: add ML library benchmarks (Feature 003)\n\nReal-world ML framework integration with TensorFlow, PyTorch support.\nHybrid Swift+Python architecture for cross-framework benchmarking.\n\nFeatures:\n- Python bridge for TensorFlow and PyTorch benchmarks\n- Framework metrics with overhead analysis\n- Model variant support (small/medium/large)\n- Unified JSON output format across frameworks\n- Extends Features 001 (Metal) and 002 (menu/remote)\n\nArchitecture:\n- Swift: CoreML (native), MLX (bindings), orchestration\n- Python: TensorFlow-macos, PyTorch MPS via subprocess\n- Process API: Reuses Feature 002''s proven pattern\n\nComponents:\n- PythonBridge: Execute Python scripts, parse JSON\n- FrameworkMetrics: Extended performance metrics\n- tensorflow_benchmark.py: TF matrix multiplication\n- pytorch_benchmark.py: PyTorch MPS benchmark\n\nAll 38 tasks complete. Constitution compliant.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: add ML library benchmarks (Feature 003)\n\nReal-world ML framework integration with TensorFlow, PyTorch support.\nHybrid Swift+Python architecture for cross-framework benchmarking.\n\nFeatures:\n- Python bridge for TensorFlow and PyTorch benchmarks\n- Framework metrics with overhead analysis\n- Model variant support (small/medium/large)\n- Unified JSON output format across frameworks\n- Extends Features 001 (Metal) and 002 (menu/remote)\n\nArchitecture:\n- Swift: CoreML (native), MLX (bindings), orchestration\n- Python: TensorFlow-macos, PyTorch MPS via subprocess\n- Process API: Reuses Feature 002''s proven pattern\n\nComponents:\n- PythonBridge: Execute Python scripts, parse JSON\n- FrameworkMetrics: Extended performance metrics\n- tensorflow_benchmark.py: TF matrix multiplication\n- pytorch_benchmark.py: PyTorch MPS benchmark\n\nAll 38 tasks complete. Constitution compliant.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(python3:*)",
+      "Bash(pip3 install:*)",
+      "Bash(.venv/bin/python3:*)"
     ],
     "deny": [],
     "ask": []

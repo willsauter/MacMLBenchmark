@@ -20,22 +20,27 @@ class PythonFrameworkBenchmark: BaseBenchmark, BenchmarkProtocol {
         )
 
         // Parse JSON output
-        guard let data = output.data(using: .utf8),
-              let json = try? JSONDecoder().decode(PythonBenchmarkResult.self, from: data) else {
-            throw BenchmarkError.executionFailed("Failed to parse Python output")
+        guard let data = output.data(using: .utf8) else {
+            throw BenchmarkError.executionFailed("Failed to get output data")
         }
+
+        let json = try JSONDecoder().decode(PythonBenchmarkResult.self, from: data)
 
         if let error = json.error {
             throw BenchmarkError.executionFailed(error)
         }
 
+        guard let metrics = json.metrics else {
+            throw BenchmarkError.executionFailed("No metrics in output")
+        }
+
         return PerformanceMetrics(
-            throughputOpsPerSec: json.metrics.throughputOpsPerSec,
-            latencyMs: json.metrics.latencyMs,
-            gpuUtilizationPercent: json.metrics.gpuUtilizationPercent,
-            peakMemoryUsageMB: json.metrics.peakMemoryUsageMB,
-            averageMemoryUsageMB: json.metrics.averageMemoryUsageMB,
-            iterationsCompleted: json.metrics.iterationsCompleted
+            throughputOpsPerSec: metrics.throughputOpsPerSec,
+            latencyMs: metrics.latencyMs,
+            gpuUtilizationPercent: metrics.gpuUtilizationPercent,
+            peakMemoryUsageMB: metrics.peakMemoryUsageMB,
+            averageMemoryUsageMB: metrics.averageMemoryUsageMB,
+            iterationsCompleted: metrics.iterationsCompleted
         )
     }
 
@@ -47,7 +52,7 @@ class PythonFrameworkBenchmark: BaseBenchmark, BenchmarkProtocol {
 struct PythonBenchmarkResult: Codable {
     let framework: String?
     let error: String?
-    let metrics: PythonMetrics
+    let metrics: PythonMetrics?
     let initTimeMs: Double?
 }
 
