@@ -96,6 +96,50 @@ class BenchmarkRegistry {
             resourceRequirements: ResourceRequirements(minMemoryGB: 2, minGPUCores: 8, minMacOSVersion: "12.0"),
             implementation: MixedOperationsBenchmark()
         )
+
+        // 6. TensorFlow Framework Benchmark
+        // Use hardcoded path - user must run from project root
+        let tfScript = "/Users/willsauter/Development/MacMLBenchmark/src/python/tensorflow_benchmark.py"
+        let pyScript = "/Users/willsauter/Development/MacMLBenchmark/src/python/pytorch_benchmark.py"
+
+        register(
+            name: "tensorflow-matmul",
+            displayName: "TensorFlow Matrix Multiply",
+            taskType: .inference,
+            description: "TensorFlow matrix multiplication using GPU acceleration",
+            defaultParameters: ["duration": 10, "size": 1024],
+            parameterConstraints: [
+                "duration": .range(min: 1, max: 3600),
+                "size": .range(min: 128, max: 8192)
+            ],
+            resourceRequirements: ResourceRequirements(minMemoryGB: 2, minGPUCores: 8, minMacOSVersion: "12.0"),
+            implementation: PythonFrameworkBenchmark(
+                name: "tensorflow-matmul",
+                displayName: "TensorFlow Matrix Multiply",
+                scriptPath: tfScript,
+                frameworkName: "TensorFlow"
+            )
+        )
+
+        // 7. PyTorch Framework Benchmark
+        register(
+            name: "pytorch-matmul",
+            displayName: "PyTorch Matrix Multiply",
+            taskType: .inference,
+            description: "PyTorch matrix multiplication using MPS backend",
+            defaultParameters: ["duration": 10, "size": 1024],
+            parameterConstraints: [
+                "duration": .range(min: 1, max: 3600),
+                "size": .range(min: 128, max: 8192)
+            ],
+            resourceRequirements: ResourceRequirements(minMemoryGB: 2, minGPUCores: 8, minMacOSVersion: "12.0"),
+            implementation: PythonFrameworkBenchmark(
+                name: "pytorch-matmul",
+                displayName: "PyTorch Matrix Multiply",
+                scriptPath: pyScript,
+                frameworkName: "PyTorch"
+            )
+        )
     }
 
     /// Registers a benchmark task
