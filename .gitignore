@@ -1,0 +1,43 @@
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Xcode
+xcuserdata/
+*.xcworkspace
+*.xcodeproj
+
+# Build artifacts
+*.o
+*.dylib
+*.swiftmodule
+*.swiftdoc
+*.swiftsourceinfo
+
+# Results and logs
+results/*.json
+results/*.csv
+*.log
+
+# Configuration (SSH profiles may contain sensitive info)
+config/machines.json
+
+# Environment
+.env
+.env.*
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak

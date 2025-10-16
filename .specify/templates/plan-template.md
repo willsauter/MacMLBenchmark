@@ -31,7 +31,15 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Verify compliance with all principles in `.specify/memory/constitution.md`:
+
+- [ ] **Complete Feature Delivery**: All user stories for this feature will be fully implemented and tested before moving to next feature
+- [ ] **Incremental User Story Implementation**: User stories are prioritized (P1, P2, P3...) and independently testable
+- [ ] **Testing Discipline**: Testing strategy is explicit (tests required OR manual validation documented)
+- [ ] **Code Quality**: Implementation will follow YAGNI, single responsibility, and clarity over cleverness
+- [ ] **Documentation Standards**: spec.md, plan.md, tasks.md, and quickstart.md (if applicable) will be maintained
+
+**Complexity Justification** (if any violations exist, document in Complexity Tracking table below)
 
 ## Project Structure
 
